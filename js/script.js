@@ -101,8 +101,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     }, {
-      threshold: 0.1,
-      rootMargin: "-10% 0px -10% 0px"
+      threshold: 0.08,
+      rootMargin: "0px 0px -5% 0px"
     });
     
     // Add staggered delay for lists (chips and certs)
@@ -119,19 +119,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Initialize Lenis smooth scroll
-  if (typeof Lenis !== 'undefined') {
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smoothWheel: true
-    });
-    
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    
-    requestAnimationFrame(raf);
-  }
 });
+
